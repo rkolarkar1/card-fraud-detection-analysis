@@ -36,7 +36,7 @@ card-fraud-detection-analysis/
 
 This project uses the **CreditTransAct** dataset (Mendeley Data) — a large-scale synthetic credit card transaction dataset (15M rows, 4.9% fraud rate) with realistic behavioral, device, network, and authentication features designed for fraud-detection benchmarking.
 
-> Citation pending — link/DOI to be added.
+> Sidratul, Muntaha; Dewanjee, Swarup (2026), "CreditTransAct: A Profile-Driven Dataset for Scalable Credit Card Fraud Detection", Mendeley Data, V1, doi: [10.17632/y64bbnm2s3.1](https://doi.org/10.17632/y64bbnm2s3.1) (CC BY 4.0)
 
 Not included in this repo (`data/` is gitignored — ~500MB as parquet); download it separately and place it at `data/credit_card_fraud.parquet` before running anything below.
 
