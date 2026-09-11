@@ -1,0 +1,198 @@
+[
+  {
+    "case": "Confidently caught fraud",
+    "transaction_id": "TXN_45_0122184",
+    "fraud_probability_pct": 100.0,
+    "actual_label": "fraud",
+    "top_contributing_signals": [
+      {
+        "feature": "cards_on_device_30d",
+        "value": 11,
+        "shap_contribution": 3.2908,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "session_duration_sec",
+        "value": 1.9,
+        "shap_contribution": 3.0621,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "merchant_category_vs_history",
+        "value": "never_before_category",
+        "shap_contribution": 2.6326,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "geo_velocity_kmh",
+        "value": 1028.5,
+        "shap_contribution": 2.1837,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "geo_distance_km",
+        "value": 7247.2998,
+        "shap_contribution": 1.6646,
+        "direction": "increases risk"
+      }
+    ],
+    "explanation": {
+      "summary": "The transaction received a high fraud probability of 100% due to several factors influencing its risk level",
+      "key_signals": [
+        "Cards on Device (30 days): Increased risk.",
+        "Session Duration: Longer sessions increase risk.",
+        "Merchant Category vs History: New merchant category increases risk.",
+        "Geo Velocity (km/h): High velocity indicates rapid movement, increasing risk.",
+        "Geo Distance (km): Long distances traveled also increase risk."
+      ],
+      "recommended_action": "The analyst should investigate these signals further to understand their impact on the transaction and consider additional measures such as increased monitoring or more stringent authentication methods."
+    }
+  },
+  {
+    "case": "Borderline / ambiguous case",
+    "transaction_id": "TXN_10_0018121",
+    "fraud_probability_pct": 50.0,
+    "actual_label": "legitimate",
+    "top_contributing_signals": [
+      {
+        "feature": "cards_on_device_30d",
+        "value": 2,
+        "shap_contribution": -2.1407,
+        "direction": "decreases risk"
+      },
+      {
+        "feature": "avg_amount_deviation_sigma",
+        "value": 3.22,
+        "shap_contribution": 1.4679,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "country_consistency",
+        "value": "high_risk_country",
+        "shap_contribution": 1.2588,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "three_ds_auth_result",
+        "value": "bypassed",
+        "shap_contribution": 1.2169,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "tokenization_used",
+        "value": "raw_pan_manual_entry",
+        "shap_contribution": 0.6466,
+        "direction": "increases risk"
+      }
+    ],
+    "explanation": {
+      "summary": "The transaction received a fraud probability of 50% due to high values on several signals indicating increased risk",
+      "key_signals": [
+        "Cards On Device (30D): A value of 2 indicates a significant decrease in risk.",
+        "Average Amount Deviation Sigma: With a value of 3.22, this signal increases risk significantly.",
+        "Country Consistency: Being from a high-risk country raises suspicion.",
+        "Three-Digit Security Code Result: The bypassed result increases risk.",
+        "Tokenization Used: Using raw PAN manual entry increases risk."
+      ],
+      "recommended_action": "Investigate further transactions flagged as potentially fraudulent based on these high-risk signals."
+    }
+  },
+  {
+    "case": "Confidently legitimate",
+    "transaction_id": "TXN_15_0014746",
+    "fraud_probability_pct": 0.0,
+    "actual_label": "legitimate",
+    "top_contributing_signals": [
+      {
+        "feature": "cards_on_device_30d",
+        "value": 2,
+        "shap_contribution": -2.5287,
+        "direction": "decreases risk"
+      },
+      {
+        "feature": "cvv_match_status",
+        "value": "cvv2_match",
+        "shap_contribution": -1.5184,
+        "direction": "decreases risk"
+      },
+      {
+        "feature": "ip_address_type",
+        "value": "residential",
+        "shap_contribution": -1.2622,
+        "direction": "decreases risk"
+      },
+      {
+        "feature": "country_consistency",
+        "value": "same_country",
+        "shap_contribution": -1.2131,
+        "direction": "decreases risk"
+      },
+      {
+        "feature": "three_ds_auth_result",
+        "value": "not_enrolled",
+        "shap_contribution": -1.0295,
+        "direction": "decreases risk"
+      }
+    ],
+    "explanation": {
+      "summary": "The transaction did not receive any significant influence from the top contributing signals, resulting in a fraud probability of 0%. The key signals that were considered but had minimal impact include",
+      "key_signals": [
+        "cards_on_device_30d: Decreases risk (contribution: -2.5287)",
+        "cvv_match_status: Decreases risk (contribution: -1.5184)",
+        "ip_address_type: Decreases risk (contribution: -1.2622)",
+        "country_consistency: Decreases risk (contribution: -1.2131)",
+        "three_ds_auth_result: Decreases risk (contribution: -1.0295)"
+      ],
+      "recommended_action": "Since there is no significant signal influencing the transaction, further investigation into other factors or additional data points may be necessary to determine if the transaction should be flagged as potentially fraudulent."
+    }
+  },
+  {
+    "case": "Missed fraud (false negative)",
+    "transaction_id": "TXN_33_0126589",
+    "fraud_probability_pct": 1.3,
+    "actual_label": "fraud",
+    "top_contributing_signals": [
+      {
+        "feature": "cards_on_device_30d",
+        "value": 2,
+        "shap_contribution": -2.3183,
+        "direction": "decreases risk"
+      },
+      {
+        "feature": "account_credential_change_recency",
+        "value": "changed_within_24h",
+        "shap_contribution": 1.94,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "avg_amount_deviation_sigma",
+        "value": 4.98,
+        "shap_contribution": 1.2372,
+        "direction": "increases risk"
+      },
+      {
+        "feature": "cvv_match_status",
+        "value": "cvv2_match",
+        "shap_contribution": -0.8938,
+        "direction": "decreases risk"
+      },
+      {
+        "feature": "tokenization_used",
+        "value": "network_token_wallet",
+        "shap_contribution": -0.8133,
+        "direction": "decreases risk"
+      }
+    ],
+    "explanation": {
+      "summary": "The transaction received a fraud probability of 1.3% due to several factors influencing its likelihood",
+      "key_signals": [
+        "Cards on Device (30D): The presence of cards on the device increases the risk.",
+        "Account Credential Change Recency: A change within the last 24 hours significantly increases the risk.",
+        "Average Amount Deviation Sigma: Higher deviation indicates more significant spending patterns, increasing risk.",
+        "CVV Match Status: CVV2 match decreases the risk.",
+        "Tokenization Used: Network token wallet usage decreases the risk."
+      ],
+      "recommended_action": "Investigate the account credential change immediately as it is the highest contributing signal to increase the risk."
+    }
+  }
+]

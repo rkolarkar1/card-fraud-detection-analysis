@@ -1,0 +1,97 @@
+{
+  "full_model": {
+    "dropped_features": [],
+    "pr_auc": 0.9928159935196902,
+    "roc_auc": 0.9993613458505846,
+    "best_threshold": 0.9305354952812195,
+    "best_f1": 0.9889793435711274,
+    "recall_at_best_f1": 0.9785847869699752,
+    "top_5_features": [
+      {
+        "feature": "cards_on_device_30d",
+        "importance": 0.7607600092887878
+      },
+      {
+        "feature": "device_fingerprint_match",
+        "importance": 0.10659244656562805
+      },
+      {
+        "feature": "transaction_velocity_1h",
+        "importance": 0.025741921737790108
+      },
+      {
+        "feature": "merchant_category_vs_history",
+        "importance": 0.024337615817785263
+      },
+      {
+        "feature": "geo_distance_km",
+        "importance": 0.018173515796661377
+      }
+    ]
+  },
+  "without_cards_on_device_30d": {
+    "dropped_features": [
+      "cards_on_device_30d"
+    ],
+    "pr_auc": 0.9927722957610897,
+    "roc_auc": 0.999356038745128,
+    "best_threshold": 0.9399401545524597,
+    "best_f1": 0.988775938030031,
+    "recall_at_best_f1": 0.9783263626780917,
+    "top_5_features": [
+      {
+        "feature": "cvv_match_status",
+        "importance": 0.4347626864910126
+      },
+      {
+        "feature": "device_fingerprint_match",
+        "importance": 0.289315789937973
+      },
+      {
+        "feature": "transaction_velocity_1h",
+        "importance": 0.052975043654441833
+      },
+      {
+        "feature": "avg_amount_deviation_sigma",
+        "importance": 0.04784059152007103
+      },
+      {
+        "feature": "geo_distance_km",
+        "importance": 0.043749455362558365
+      }
+    ]
+  },
+  "without_top2_signals": {
+    "dropped_features": [
+      "cards_on_device_30d",
+      "device_fingerprint_match"
+    ],
+    "pr_auc": 0.9921555333056582,
+    "roc_auc": 0.9990380150276521,
+    "best_threshold": 0.9258372783660889,
+    "best_f1": 0.9887765551648277,
+    "recall_at_best_f1": 0.9783807677921724,
+    "top_5_features": [
+      {
+        "feature": "cvv_match_status",
+        "importance": 0.5749323964118958
+      },
+      {
+        "feature": "transaction_velocity_1h",
+        "importance": 0.10233958810567856
+      },
+      {
+        "feature": "geo_distance_km",
+        "importance": 0.08165368437767029
+      },
+      {
+        "feature": "avg_amount_deviation_sigma",
+        "importance": 0.06981092691421509
+      },
+      {
+        "feature": "ip_address_type",
+        "importance": 0.039260316640138626
+      }
+    ]
+  }
+}
