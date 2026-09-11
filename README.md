@@ -6,6 +6,10 @@ Fraud teams at banks are flooded with flagged transactions every day. A machine 
 
 I wanted to build something that closes that gap: a fraud detection model paired with a generative AI layer that turns a flagged transaction and its model output into a short, plain-English explanation an analyst can act on immediately.
 
+## Summary
+
+An XGBoost classifier trained on 15M synthetic credit card transactions (CreditTransAct dataset) flags fraud with a PR-AUC of 0.993 and ROC-AUC of 0.999. Each flagged transaction is paired with a per-transaction SHAP attribution, which a small local LLM (Qwen2.5-1.5B-Instruct, no API key, no external calls) turns into a short, plain-English explanation and recommended action. An ablation experiment shows the model isn't over-reliant on any single feature — several signals independently capture the same fraud pattern. A separate script (`score_new_transactions.py`) runs the full pipeline end-to-end on new, unlabeled transactions: score, flag, explain.
+
 ## What It Does
 
 1. **Detects fraud** using a machine learning model (XGBoost) trained on a large synthetic transaction dataset with realistic behavioral features — transaction amount deviation, geo-velocity, device and network signals, authentication results, and account history.
