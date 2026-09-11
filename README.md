@@ -1,6 +1,6 @@
 # Card Fraud Detection & Analysis
 
-## Why I Built This
+## Overview
 
 Fraud teams at banks are flooded with flagged transactions every day. A machine learning model can score a transaction as suspicious, but a raw probability score or a binary flag doesn't tell an analyst *why* a transaction looks wrong, or what kind of fraud pattern it resembles. That gap slows down investigation and makes it harder to trust and act on model output quickly.
 
